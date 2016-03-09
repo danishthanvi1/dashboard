@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict'
+
 require('./lib/init')
 var path = require('path')
 var http = require('http')
@@ -58,6 +60,34 @@ proxy.on('error', function (err, req, res) {
   } else {
     return console.trace(err)
   }
+server.listen(process.env.PORT, function () {
+  console.log('👾  Netbeast dashboard started on %s:%s', server.address().address, server.address().port)
+
+  const electron = require('electron')
+  const app = electron.app
+  const BrowserWindow = electron.BrowserWindow
+
+  let mainWindow
+
+  function createWindow () {
+    mainWindow = new BrowserWindow({width: 1000, height: 800, title: 'Netbeast Dashboard'})
+    mainWindow.loadURL('http://localhost:8000')
+    mainWindow.on('closed', function() {
+      mainWindow = null
+    })
+  }
+  app.on('ready', createWindow)
+  app.on('window-all-closed', function () {
+    if (process.platform !== 'darwin') {
+     app.quit()
+    }
+  })
+  app.on('activate', function () {
+    if (mainWindow === null) {
+      createWindow()
+    }
+  })
+  bootOnload()
 })
 
 var env = Object.create(process.env)
