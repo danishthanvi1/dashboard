@@ -76,11 +76,21 @@ appdmg ../dashboard/desktop_app/appdmg.json ~/Desktop/Netbeast.dmg
 
 - Then you will have the Netbeast.dmg file on your desktop :smile:
 
+
 ## Contribute
 
 Take a look to our CONTRIBUTING file in order to see how you can be part of this project. [Contribue](https://github.com/netbeast/dashboard/blob/master/CONTRIBUTING.md)
 
 If you are part of the Netbeast community don't forget to write down your name on the AUTHORS file. [Authors](https://github.com/netbeast/dashboard/blob/master/AUTHORS)
+
+##Compile the desktop version for Windows
+
+Coming Soon
+
+##Compile the desktop version for Linux
+
+Coming Soon
+>>>>>>> 074ec76... Update README.md
 
 ## Contact
 * Visit our site [https://netbeast.co](https://netbeast.co)
