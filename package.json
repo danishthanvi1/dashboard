@@ -99,7 +99,7 @@
     "build": "./node_modules/.bin/gulp build",
     "dev": "./node_modules/.bin/gulp",
     "clean": "rm -r ./test/coverage; rm .database.sqlite",
-    "start": "electron index.js"
+    "start": "./node_modules/.bin/electron index.js"
   },
   "engines": {
     "node": ">=0.12"
