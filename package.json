@@ -49,7 +49,7 @@
     "chart.js": "^1.1.0",
     "chartjs": "^0.3.7",
     "envify": "^3.4.0",
-    "electron-prebuilt": "^0.36.9",
+    "electron-prebuilt": "^0.37.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-bg": "^0.0.8",
@@ -98,8 +98,7 @@
     "coverage": "export NODE_PATH=.:$NODE_PATH && export ENV=development && ./node_modules/.bin/gulp coverage",
     "build": "./node_modules/.bin/gulp build",
     "dev": "./node_modules/.bin/gulp",
-    "clean": "rm -r ./test/coverage; rm .database.sqlite",
-    "start": "./node_modules/.bin/electron index.js"
+    "start": "./node_modules/.bin/electron main.js"
   },
   "engines": {
     "node": ">=0.12"
