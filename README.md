@@ -8,24 +8,15 @@ This is a web panel from you can install, manage or publish IoT applications. Fo
 
 [<img src="https://slack.com/img/slack_hash_128.v1442100037.png" height="24px" width="auto"/> Join us in Slack!](https://netbeastco.typeform.com/to/VGLexg)
 
-## Try it locally
-```bash
-git clone https://github.com/netbeast/dashboard
-cd dashboard
-npm i # by default, dependencies are ignored
-npm start
-```
+## Current Status :rocket:
+>>>>>>> 1bf85df... Fixed problems with windows
 
-Find it live at `http://localhost:8000` 
-> Or run it as `node index.js --port <a port of convenience>`. You can also modify the **.env** file.
+Currently, we are developing the MacApp. Feel free to contribute and build the application for Linux and Windows :smile:
 
-![Dashboard live GIF](public/img/dashboard-demo.gif)
-
-### Measure all your data
-Use the [Netbeast API](https://github.com/netbeast/api) along with the dashboard to publish data through MQTT or reuse it in your apps. http://docs.netbeast.co/chapters/api_reference/index.html 
-![Dashboard live GIF](public/img/history.gif)
+Dashboard code will be updated continually. Take that into account to update your applications until auto-updating system is implemented (you can also collaborate with it)
 
 
+## Run it locally
 This is the desktop version of the Netbeast dashboard. If you want to run the desktop version locally run:
 
 ```
@@ -68,10 +59,10 @@ npm install
 ##### 2. Create the Mac App
 
 ```
-electron-packager dashboard Netbeast --platform=darwin --arch=all --version=0.36.10 --icon=dashboard/desktop_app/icon.icns --version-string.CompanyName=Netbeast --version-string.ProductName=NetbeastDashboard
+electron-packager dashboard Netbeast --platform=darwin --arch=x64 --version=0.37.2 --icon=dashboard/desktop_app/icon.icns --version-string.CompanyName=Netbeast --version-string.ProductName=NetbeastDashboard
 ```
 
--  Check the electron version ```./node_modules/.bin/electron -v```in my case: 36.10
+-  Check the electron version ```./node_modules/.bin/electron -v```in my case: 0.37.2
 
 ##### 3. Create the Mac dmg
 
