@@ -71,8 +71,11 @@ Once you have created the Netbeast dashboard app you can run the following comma
 
 ```
 cd Netbeast-darwin-x64
-##Copy files from dashboard folder to the new one
+
+#Copy files from dashboard folder to the new one
 cp ../dashboard/desktop_app/icon.icns ../dashboard/desktop_app/appdmg.json ../dashboard/desktop_app/background.png .
+
+#Package to .dmg
 appdmg appdmg.json ~/Desktop/Netbeast.dmg
 ```
 
@@ -93,6 +96,20 @@ Coming Soon
 
 Coming Soon
 >>>>>>> 074ec76... Update README.md
+
+## Problems
+
+#####Sqlite3
+
+Sometimes you can have some problems with sqlite3 npm package when electron tries to run it. In order to solve this problem you should follow these steps:
+
+```
+cd node_modules/sqlite3
+npm run prepublish
+node-gyp configure --module_name=node_sqlite3 --module_path=../lib/binding/node-v47-darwin-x64
+node-gyp rebuild --target=0.37.2 --arch=x64 --target_platform=darwin --dist-url=https://atom.io/download/atom-shell --module_name=node_sqlite3 --module_path=../lib/binding/node-v47-darwin-x64
+```
+
 
 ## Contact
 * Visit our site [https://netbeast.co](https://netbeast.co)
