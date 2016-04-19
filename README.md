@@ -9,13 +9,27 @@ This is a web panel from you can install, manage or publish IoT applications. Fo
 [<img src="https://slack.com/img/slack_hash_128.v1442100037.png" height="24px" width="auto"/> Join us in Slack!](https://netbeastco.typeform.com/to/VGLexg)
 
 ## Current Status :rocket:
->>>>>>> 1bf85df... Fixed problems with windows
 
-Currently, we are developing the MacApp. Feel free to contribute and build the application for Linux and Windows :smile:
+Dashboard code will be updated continually. Take that into account to update your applications until auto-updating system is implemented (you can also collaborate with it) :smile:
 
-Dashboard code will be updated continually. Take that into account to update your applications until auto-updating system is implemented (you can also collaborate with it)
+Application is currently available for the following OS:
 
-####Download [here](http://bit.ly/1T4dQOD) now! :rocket:
+##### MAC :apple:
+
+######Download [here](http://bit.ly/1TgUVhO) now!
+
+#####LINUX :rocket:
+
+######32 bits version [here](http://bit.ly/1VglPtE)
+
+######64 bits version [here](http://bit.ly/22KDZTv)
+
+#####WINDOWS :package:
+
+######32 bits version [here](http://bit.ly/23Wcc4W)
+
+######64 bits version [here](http://bit.ly/1VglOWD)
+
 
 ## Run it locally
 This is the desktop version of the Netbeast dashboard. If you want to run the desktop version locally run:
@@ -82,21 +96,56 @@ appdmg appdmg.json ~/Desktop/Netbeast.dmg
 
 - Then you will have the Netbeast.dmg file on your desktop :smile:
 
+##Compile the desktop version for Linux
 
-## Contribute
+##### 1. Install last Nodejs version (In this example I have v5.7.1) & npm packages
 
-Take a look to our CONTRIBUTING file in order to see how you can be part of this project. [Contribue](https://github.com/netbeast/dashboard/blob/master/CONTRIBUTING.md)
+```
+# Install electron-packager
+npm install -g electron-packager
 
-If you are part of the Netbeast community don't forget to write down your name on the AUTHORS file. [Authors](https://github.com/netbeast/dashboard/blob/master/AUTHORS)
+#Install node-gyp
+npm install -g node-gyp
 
-##Compile the desktop version for Windows
+# Clone the Netbeast dashboard
+git clone -b electron --single-branch https://github.com/netbeast/dashboard
 
-Coming Soon
+# Install all dependencies
+cd dashboard
+npm install
+```
 
-## Compile the desktop version for Linux
+##### 2. Create the Linux App
 
-Coming Soon
->>>>>>> 074ec76... Update README.md
+```
+electron-packager dashboard Netbeast --platform=linux --arch=all --version=0.37.2 --icon=dashboard/desktop_app/icon.icns --version-string.CompanyName=Netbeast --version-string.ProductName=NetbeastDashboard
+```
+
+- The result will be two folders: 
+  - Netbeast-linux-ia32 : 32 bits version
+  - Netbeast-linux-x64: 64 bits version
+
+Now if you want to run the application go to the folder and double click on "Netbeast" :smile:
+
+## Compile the desktop version for Windows
+
+##### Building Windows apps from non-Windows platforms
+
+Building an Electron app for the Windows platform with a custom icon requires editing the Electron.exe file. Currently, electron-packager uses node-rcedit to accomplish this. A Windows executable is bundled in that node package and needs to be run in order for this functionality to work, so on non-Windows host platforms, Wine needs to be installed. On OS X, it is installable via Homebrew.
+
+You can find more information [here](https://github.com/electron-userland/electron-packager)
+
+##### Create the Windows App
+
+```
+electron-packager dashboard Netbeast --platform=win32 --arch=all --version=0.37.2 --icon=dashboard/desktop_app/icon.ico --version-string.CompanyName=Netbeast --version-string.ProductName=NetbeastDashboard
+```
+
+- The result will be two folders: 
+  - Netbeast-win32-ia32 : 32 bits version
+  - Netbeast-win32-x64: 64 bits version
+
+Now if you want to run the application go to the folder and double click on "Netbeast.exe" :smile:
 
 ## Problems
 
@@ -111,6 +160,11 @@ node-gyp configure --module_name=node_sqlite3 --module_path=../lib/binding/node-
 node-gyp rebuild --target=0.37.2 --arch=x64 --target_platform=darwin --dist-url=https://atom.io/download/atom-shell --module_name=node_sqlite3 --module_path=../lib/binding/node-v47-darwin-x64
 ```
 
+## Contribute
+
+Take a look to our CONTRIBUTING file in order to see how you can be part of this project. [Contribue](https://github.com/netbeast/dashboard/blob/master/CONTRIBUTING.md)
+
+If you are part of the Netbeast community don't forget to write down your name on the AUTHORS file. [Authors](https://github.com/netbeast/dashboard/blob/master/AUTHORS)
 
 ## Contact
 * Visit our site [https://netbeast.co](https://netbeast.co)
