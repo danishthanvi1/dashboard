@@ -24,12 +24,6 @@ Application is currently available for the following OS:
 
 ######64 bits version [here](http://bit.ly/22KDZTv)
 
-#####WINDOWS :package:
-
-######32 bits version [here](http://bit.ly/23Wcc4W)
-
-######64 bits version [here](http://bit.ly/1VglOWD)
-
 
 ## Run it locally
 This is the desktop version of the Netbeast dashboard. If you want to run the desktop version locally run:
