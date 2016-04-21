@@ -29,8 +29,6 @@ var server = http.createServer(app)
 var broker = new mosca.Server({})
 broker.attachHttpServer(server)
 
-console.log(cmd)
-
 process.env.SPORT = cmd.secure_port || process.env.SECURE_PORT
 process.env.PORT = cmd.port || process.env.PORT
 
@@ -48,6 +46,7 @@ var proxy = httpProxy.createServer({
   server.listen(process.env.PORT, function () {
     console.log('👾  Netbeast dashboard started on %s:%s', server.address().address, server.address().port)
     bootOnload()
+    process.send('ready')
   })
 })
 
@@ -58,10 +57,6 @@ proxy.on('error', function (err, req, res) {
   } else {
     return console.trace(err)
   }
-server.listen(process.env.PORT, function () {
-  console.log('👾  Netbeast dashboard started on %s:%s', server.address().address, server.address().port)
-  bootOnload()
-  process.send('ready')
 })
 
 var env = Object.create(process.env)

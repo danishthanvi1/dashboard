@@ -44,5 +44,3 @@ dashboard.on('message', function(data) {
 process.on('exit', function () {
 	dashboard.kill()
 })
-//dashboard.stdout.on('data', function (data) { console.log(data.toString()) })
-//dashboard.stderr.on('data', function (data) { console.log(data.toString()) })
