@@ -12,6 +12,10 @@ var ApiError = require('../util/api-error')
 var Resource = require('./resource')
 var App = require('./app')
 
+//Analytics
+var Mixpanel = require('mixpanel')
+var mixpanel = Mixpanel.init('e794af6318eedbddd288e440a50c16f5')
+
 const APPS_DIR = process.env.APPS_DIR
 
 // Apps with their child object running
@@ -102,6 +106,8 @@ self.on('start', function (app) {
 
   App.getPackageJson(app.name, function (err, pkgJson) {
     if (err) return broker.error(err.toString())
+
+    mixpanel.track('App running')
 
     // *****************
     // Child management

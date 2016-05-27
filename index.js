@@ -13,6 +13,10 @@ var aedes = require('aedes')({
   concurrency: 1000
 })
 
+//Analytics
+var Mixpanel = require('mixpanel')
+var mixpanel = Mixpanel.init('e794af6318eedbddd288e440a50c16f5')
+
 var httpProxy = require('http-proxy')
 var chalk = require('chalk')
 
@@ -46,6 +50,9 @@ var proxy = httpProxy.createServer({
   ws: true
 }).listen(process.env.SECURE_PORT, function () {
   server.listen(process.env.PORT, function () {
+    
+    mixpanel.track('Dashboard Started')
+
     const addr = server.address().address
     const port = server.address().port
     console.log('👾  Netbeast dashboard started on %s:%s', addr, port)

@@ -8,6 +8,10 @@ var fs = require('fs-extra')
 var ApiError = require('../util/api-error')
 var broker = require('../helpers/broker')
 
+//Analytics
+var Mixpanel = require('mixpanel')
+var mixpanel = Mixpanel.init('e794af6318eedbddd288e440a50c16f5')
+
 function _installDeps (app, done) {
   const root = path.join(process.env.APPS_DIR, app.name)
   const modules = path.join(root, 'node_modules')
@@ -49,6 +53,9 @@ function _installFromDir (dir, done) {
   }
 
   broker.info('Setting everything up for you...')
+
+  if(appJson.netbeast && appJson.netbeast.type && appJson.netbeast.type === 'plugin') mixpanel.track('Plugin installed')
+  else mixpanel.track('App installed')
 
   fs.move(dir, appRoot, function (err) {
     if (err) return done(err)

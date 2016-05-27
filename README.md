@@ -116,6 +116,8 @@ Find tutorials in the [docs](http://bit.ly/1VYfqDH), read a blog post about it o
 ## Documentation
 We publish a [gitbook](https://www.gitbook.com/book/netbeast/docs/details) with fresh documentation on [https://docs.netbeast.co](http://bit.ly/1VYfqDH). If you want to open an issue, contribute or edit it, find your way on its github repo https://github.com/netbeast/docs.
 
+Here you have the [Netbeast Cheat Sheet](http://forum.netbeast.co/uploads/default/original/1X/1560f93d99752ab7c23aa72ea1bc942e487f93a4.jpg). It can be really useful to find quick references.
+
 <a name="iot-with-node"></a>
 # Create IoT with Node.js
 In Netbeast we care about education, openness and interoperability. We have created a series of workshops to teach developers to better use HTTP, MQTT in combination with the **Dashboard** to create data bindings and incredible apps. Use your favorite boards and platforms as Arduino, Pi Zero, Pine64, Belkin Wemo, Homekit and a infinite list, connected.
